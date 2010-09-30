@@ -1,0 +1,27 @@
+Simple Cocoa ISBN lookup example code using the 
+forsale.objectsinspaceandtime.com REST API.
+
+Compile it by pressing the button in Xcode (circa 3.2.2).
+Test it by entering an ISBN number in the ensuant dialog box,
+ and then waiting a second or so. 
+
+Maybe you're wondering why an ObjC toy is the only definitive
+comment from the entire forsale.objectsinspaceandtime.com
+Developer Zone(tm)... I mean, is there any actual API
+documentation? No. Is there a versioning or release schedule
+plan? Also, no. Is there any iOS sample code? No. Is there a
+place where forsale.objectsinspaceandtime.com site members
+might be able to download the iSight barcode scanner (source
+or otherwise)? Yeah, no.
+
+All of the "no" instances in the last graf are technically
+really not-just-yets -- but look I saw what happened to the
+TextMate guy, and like him, I am but one man with a laptop
+and a geeky dream. So in the meantime, until it all gets
+dreampt, here's a demo I can definitively put out there.
+
+More may follow, but maybe it won't -- low expectations mean
+less exposure to hazardous software vapors for us both.
+I will gladly send you more sample code or back-of-the-
+envelope HOWTOs on the API if you show any sort of
+sensible interest -- try me. In any case have fun dogg.
