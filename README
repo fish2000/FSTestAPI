@@ -1,9 +1,13 @@
 Simple Cocoa ISBN lookup example code using the 
 forsale.objectsinspaceandtime.com REST API.
 
+To build the demo, you need Stig Brautaset's JSON framework:
+
+   http://stig.github.com/json-framework/
+
 Compile it by pressing the button in Xcode (circa 3.2.2).
 Test it by entering an ISBN number in the ensuant dialog box,
- and then waiting a second or so. 
+and then waiting a second or so. 
 
 Maybe you're wondering why an ObjC toy is the only definitive
 comment from the entire forsale.objectsinspaceandtime.com
