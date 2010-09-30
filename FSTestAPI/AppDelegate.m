@@ -31,7 +31,8 @@ static NSString *endpt;
 	}
 	if (![super init]) return nil;
 	
-	endpt = @"http://otus-asio.local/api/isbn/";
+	//endpt = @"http://otus-asio.local/api/isbn/"; // local
+	endpt = @"http://forsale.objectsinspaceandtime.com/api/isbn/"; // public
 	queue = [[NSOperationQueue alloc] init];
 	shared = self;
 	return self;
@@ -59,8 +60,6 @@ static NSString *endpt;
 
 - (void)outputResults:(NSDictionary*)whatwegot {
 	//NSLog(@"AppDelegate outputResults: %@", whatwegot);
-	
-	//(NSString *)
 	//NSLog(@"Result status type: %@", [[whatwegot objectForKey:@"status"] class]);
 	
 	if (whatwegot) {

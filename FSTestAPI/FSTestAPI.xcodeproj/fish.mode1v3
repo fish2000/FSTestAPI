@@ -331,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CF62311B12543B8600230F3C</string>
+										<string>CF6231381254472400230F3C</string>
 										<key>history</key>
 										<array>
 											<string>CFA140571159B53B0002FD11</string>
@@ -538,12 +538,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CF62312612543B8600230F3C</string>
 		<string>CF62312712543B8600230F3C</string>
 		<string>CF62312812543B8600230F3C</string>
 		<string>CFA1EF2611596D3C001D5243</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/fish/Dropbox/ost2/tools/barcode/FSTestAPI/FSTestAPI/FSTestAPI.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
