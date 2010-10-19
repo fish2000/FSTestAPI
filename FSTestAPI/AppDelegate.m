@@ -6,7 +6,8 @@
 //  Copyright 2010 Objects In Space And Time, LLC. All rights reserved.
 //
 
-#import <JSON/JSON.h>
+//#import <JSON/JSON.h>
+//#import "JSON/JSON.h"
 #import "AppDelegate.h"
 #import "FSTestAPIOperation.h"
 
@@ -60,22 +61,45 @@ static NSString *endpt;
 
 - (void)outputResults:(NSDictionary*)whatwegot {
 	//NSLog(@"AppDelegate outputResults: %@", whatwegot);
-	//NSLog(@"Result status type: %@", [[whatwegot objectForKey:@"status"] class]);
 	
 	if (whatwegot) {
 		
+		NSLog(@"About to check status...");
 		if ([[whatwegot objectForKey:@"status"] isEqualToString:@"ok"]) {
-			NSDictionary *fsdataset = [[[NSDictionary alloc]
-									  initWithDictionary:[[whatwegot
-														   objectForKey:@"data"] objectForKey:@"dataset"]]
-									 autorelease];
+			NSLog(@"status ok");
 			
-			NSString *outout = [NSString stringWithFormat:@"%@ (%@) [OK]",
-			 [fsdataset objectForKey:@"title"],
-			 [fsdataset objectForKey:@"author"]];
+			NSString *outout = @"(nothing)";
+			NSDictionary *fsdataset = nil;
+			NSDictionary *fsdata = [[NSDictionary alloc] initWithDictionary:[[whatwegot
+																			 objectForKey:@"data"] retain]];
+			
+			NSLog(@"About to check for dataset...");
+			if (!([[fsdata objectForKey:@"dataset"] isEqualTo:@"None"])) {
+				fsdataset = [[[NSDictionary alloc] initWithDictionary:[fsdata objectForKey:@"dataset"]] retain];
+				NSLog(@"Formatting output string with dataset...");
+				outout = [NSString stringWithFormat:@"%@ (%@) [OK]",
+						  [fsdataset objectForKey:@"title"],
+						  [fsdataset objectForKey:@"author"]];
+			} else {
+				fsdataset = [[[NSDictionary alloc] initWithDictionary:[fsdata objectForKey:@"isbndbset"]] retain];
+				NSLog(@"Formatting output string with isbndbset...");
+				outout = [NSString stringWithFormat:@"%@ (%@) [OK]",
+						  [fsdataset objectForKey:@"title"],
+						  [fsdataset objectForKey:@"authors"]];
+			}
+			
+			
+			
+			if (fsdataset) {
+				[fsdataset release];
+			}
+			if (fsdata) {
+				[fsdata release];
+			}
 		
 			[self output:outout];
 		} else {
+			NSLog(@"WTF: status wasn't ok");
 			NSDictionary *fsdata = [[[NSDictionary alloc]
 									 initWithDictionary:[whatwegot
 														 objectForKey:@"data"]]

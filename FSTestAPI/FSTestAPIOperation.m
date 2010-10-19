@@ -7,7 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <JSON/JSON.h>
+//#import <JSON/JSON.h>
+//#import "JSON/JSON.h"
+#import "JSON/SBJsonParser.h"
 #import "AppDelegate.h"
 #import "FSTestAPIOperation.h"
 
@@ -29,7 +31,7 @@
 
 
 - (void)dealloc {
-	NSLog(@"FSTestAPIOperation dealloc");
+	//NSLog(@"FSTestAPIOperation dealloc");
 	[endpt release], endpt = nil;
 	[ISBN release], ISBN = nil;
 	[super dealloc];
@@ -37,20 +39,22 @@
 
 
 - (void)main {
-	//NSLog(@"FSTestAPIOperation main");
-	SBJSON *json = [SBJSON new];
+	SBJsonParser *json = [SBJsonParser new];
 	NSURL *url = [[[NSURL alloc] initWithString:[[self endpt] stringByAppendingString:[self ISBN]]] autorelease];
-	NSLog(@"JSON URL: %@", url);
+	
+	//NSLog(@"JSON URL: %@", url);
 	
 	NSError *error = nil;
 	NSString *jsonstring = [[[NSString alloc] initWithContentsOfURL:url] autorelease];
 	NSDictionary *jsonout = [[[NSDictionary alloc] initWithDictionary:[json objectWithString:jsonstring error:&error]] autorelease];
 	
 	if (!jsonout) {
+		NSLog(@"JSON error: %@", error);
 		[[AppDelegate shared] performSelectorOnMainThread:@selector(outputError:)
 											   withObject:error
 											waitUntilDone:YES];
 		[jsonout release];
+		[json release];
 		return;
 	}
 	

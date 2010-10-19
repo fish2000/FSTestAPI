@@ -11,7 +11,11 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		CFA1EF1711596517001D5243 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA1EF1611596517001D5243 /* JSON.framework */; };
+		CF0A2A97126E18B100DE71E6 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0A2A92126E18B100DE71E6 /* NSObject+SBJSON.m */; };
+		CF0A2A98126E18B100DE71E6 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0A2A93126E18B100DE71E6 /* NSString+SBJSON.m */; };
+		CF0A2A99126E18B100DE71E6 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0A2A94126E18B100DE71E6 /* SBJsonBase.m */; };
+		CF0A2A9A126E18B100DE71E6 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0A2A95126E18B100DE71E6 /* SBJsonParser.m */; };
+		CF0A2A9B126E18B100DE71E6 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0A2A96126E18B100DE71E6 /* SBJsonWriter.m */; };
 		CFA1EF1E11596542001D5243 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA1EF1D11596542001D5243 /* AppDelegate.m */; };
 		CFA1F02411597500001D5243 /* FSTestAPIOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA1F02311597500001D5243 /* FSTestAPIOperation.m */; };
 /* End PBXBuildFile section */
@@ -27,7 +31,11 @@
 		32CA4F630368D1EE00C91783 /* FSTestAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestAPI_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* FSTestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSTestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFA1EF1611596517001D5243 /* JSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSON.framework; path = ../../../../../../Library/Frameworks/JSON.framework; sourceTree = SOURCE_ROOT; };
+		CF0A2A92126E18B100DE71E6 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJSON.m"; path = "JSON/NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		CF0A2A93126E18B100DE71E6 /* NSString+SBJSON.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSString+SBJSON.m"; path = "JSON/NSString+SBJSON.m"; sourceTree = "<group>"; };
+		CF0A2A94126E18B100DE71E6 /* SBJsonBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SBJsonBase.m; path = JSON/SBJsonBase.m; sourceTree = "<group>"; };
+		CF0A2A95126E18B100DE71E6 /* SBJsonParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = JSON/SBJsonParser.m; sourceTree = "<group>"; };
+		CF0A2A96126E18B100DE71E6 /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = JSON/SBJsonWriter.m; sourceTree = "<group>"; };
 		CFA1EF1C11596542001D5243 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CFA1EF1D11596542001D5243 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CFA1F02211597500001D5243 /* FSTestAPIOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTestAPIOperation.h; sourceTree = "<group>"; };
@@ -42,7 +50,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				CFA1EF1711596517001D5243 /* JSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +98,11 @@
 		29B97314FDCFA39411CA2CEA /* FSTestAPI */ = {
 			isa = PBXGroup;
 			children = (
+				CF0A2A92126E18B100DE71E6 /* NSObject+SBJSON.m */,
+				CF0A2A93126E18B100DE71E6 /* NSString+SBJSON.m */,
+				CF0A2A94126E18B100DE71E6 /* SBJsonBase.m */,
+				CF0A2A95126E18B100DE71E6 /* SBJsonParser.m */,
+				CF0A2A96126E18B100DE71E6 /* SBJsonWriter.m */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -122,7 +134,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CFA1EF1611596517001D5243 /* JSON.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -157,7 +168,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FSTestAPI" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* FSTestAPI */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -184,6 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF0A2A97126E18B100DE71E6 /* NSObject+SBJSON.m in Sources */,
+				CF0A2A98126E18B100DE71E6 /* NSString+SBJSON.m in Sources */,
+				CF0A2A99126E18B100DE71E6 /* SBJsonBase.m in Sources */,
+				CF0A2A9A126E18B100DE71E6 /* SBJsonParser.m in Sources */,
+				CF0A2A9B126E18B100DE71E6 /* SBJsonWriter.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				CFA1EF1E11596542001D5243 /* AppDelegate.m in Sources */,
 				CFA1F02411597500001D5243 /* FSTestAPIOperation.m in Sources */,
@@ -227,6 +247,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FSTestAPI_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = FSTestAPI;
@@ -245,6 +266,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FSTestAPI_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = FSTestAPI;
@@ -257,10 +279,14 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_MASTER_OBJECT_FILE = NO;
+				KEEP_PRIVATE_EXTERNS = NO;
+				LD_GENERATE_MAP_FILE = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
+				PREBINDING = YES;
 				SDKROOT = macosx10.5;
 			};
 			name = Debug;
@@ -270,9 +296,13 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
+				GENERATE_MASTER_OBJECT_FILE = NO;
+				KEEP_PRIVATE_EXTERNS = NO;
+				LD_GENERATE_MAP_FILE = NO;
+				PREBINDING = YES;
 				SDKROOT = macosx10.5;
 			};
 			name = Release;
