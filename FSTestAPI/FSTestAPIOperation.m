@@ -7,8 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-//#import <JSON/JSON.h>
-//#import "JSON/JSON.h"
 #import "JSON/SBJsonParser.h"
 #import "AppDelegate.h"
 #import "FSTestAPIOperation.h"
@@ -41,7 +39,6 @@
 - (void)main {
 	SBJsonParser *json = [SBJsonParser new];
 	NSURL *url = [[[NSURL alloc] initWithString:[[self endpt] stringByAppendingString:[self ISBN]]] autorelease];
-	
 	//NSLog(@"JSON URL: %@", url);
 	
 	NSError *error = nil;

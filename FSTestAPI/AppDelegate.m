@@ -6,8 +6,6 @@
 //  Copyright 2010 Objects In Space And Time, LLC. All rights reserved.
 //
 
-//#import <JSON/JSON.h>
-//#import "JSON/JSON.h"
 #import "AppDelegate.h"
 #import "FSTestAPIOperation.h"
 
@@ -17,12 +15,6 @@
 static AppDelegate *shared;
 static NSString *endpt;
 
-
-/*
-- (void)awakeFromNib {
-	NSLog(@"AppDelegate awakeFromNib");
-}
-*/
 
 
 - (id)init {
